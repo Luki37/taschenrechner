@@ -1,7 +1,10 @@
 let display2 = 0;
 let display1 = 0;
+
 const value2 = document.getElementById("display2");
 const value1 = document.getElementById("display1");
+
+const historyCalcu = document.getElementById("historyCalcu");
 
 function displayAnzeigen() {
   value2.innerHTML = display2;
@@ -31,7 +34,12 @@ function plusDisplay() {
   if (display1 === 0) {
     display1 = display2 + "+";
   } else {
-    display1 = Function("return " + display1 + display2)() + "+";
+    let total = display1 + display2;
+    let result = Function("return " + total)();
+    display1 = result + "+";
+    const addCalcu = document.createElement("li");
+    addCalcu.textContent = `${total} = ${result}`;
+    historyCalcu.appendChild(addCalcu);
   }
   display2 = 0;
   displayAnzeigen();
@@ -41,7 +49,12 @@ function minusDisplay() {
   if (display1 === 0) {
     display1 = display2 + "-";
   } else {
-    display1 = Function("return " + display1 + display2)() + "-";
+    let total = display1 + display2;
+    let result = Function("return " + total)();
+    display1 = result + "-";
+    const addCalcu = document.createElement("li");
+    addCalcu.textContent = `${total} = ${result}`;
+    historyCalcu.appendChild(addCalcu);
   }
   display2 = 0;
   displayAnzeigen();
@@ -51,7 +64,12 @@ function multiDisplay() {
   if (display1 === 0) {
     display1 = display2 + "*";
   } else {
-    display1 = Function("return " + display1 + display2)() + "*";
+    let total = display1 + display2;
+    let result = Function("return " + total)();
+    display1 = result + "*";
+    const addCalcu = document.createElement("li");
+    addCalcu.textContent = `${total} = ${result}`;
+    historyCalcu.appendChild(addCalcu);
   }
   display2 = 0;
   displayAnzeigen();
@@ -60,7 +78,12 @@ function divideDisplay() {
   if (display1 === 0) {
     display1 = display2 + "/";
   } else {
-    display1 = Function("return " + display1 + display2)() + "/";
+    let total = display1 + display2;
+    let result = Function("return " + total)();
+    display1 = result + "/";
+    const addCalcu = document.createElement("li");
+    addCalcu.textContent = `${total} = ${result}`;
+    historyCalcu.appendChild(addCalcu);
   }
   display2 = 0;
   displayAnzeigen();

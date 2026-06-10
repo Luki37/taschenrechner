@@ -68,7 +68,7 @@ body {
   cursor: pointer;
 }
 
-.archiv {
+#historyCalcu {
   background-color: var(--background-color);
   border-bottom: 1px solid var(--border-color);
   overflow-y: auto;
