@@ -25,7 +25,16 @@
           <button onclick="input(2)" class="btn">2</button
           ><button onclick="input(3)" class="btn">3</button>
           <button onclick="minusDisplay()" class="btn">-</button
-          ><button onclick="clearDisplay()" class="btn">CE</button>
+          ><button
+            ondblclick="
+              clearAll();
+              return false;
+            "
+            onclick="clearDisplay()"
+            class="btn"
+          >
+            CE
+          </button>
           <button onclick="input(0)" class="btn">0</button
           ><button onclick="equalDisplay()" class="btn">=</button>
           <button onclick="plusDisplay()" class="btn">+</button>

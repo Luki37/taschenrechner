@@ -81,7 +81,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: right;
@@ -90,6 +89,7 @@ body {
 
 li {
   padding: 1rem 0;
+  list-style-type: none;
 }
 
 @media only screen and (min-width: 600px) {
@@ -125,7 +125,7 @@ li {
   .calculator {
     width: 70vw;
   }
-  .archiv {
+  #historyCalcu {
     width: 30vw;
     border-left: 1px solid var(--border-color);
     border-bottom: none;

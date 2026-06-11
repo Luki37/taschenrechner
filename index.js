@@ -4,7 +4,7 @@ let display1 = 0;
 const value2 = document.getElementById("display2");
 const value1 = document.getElementById("display1");
 
-const historyCalcu = document.getElementById("historyCalcu");
+const historyCalcu = document.getElementById("list");
 
 function displayAnzeigen() {
   value2.innerHTML = display2;
@@ -25,10 +25,20 @@ function input(number) {
 function clearDisplay() {
   display2 = 0;
   display1 = "";
+  historyCalcu.textContent = "";
   value1.textContent = "";
   value2.textContent = "0";
   displayAnzeigen();
 }
+
+/* function clearAll() {
+  display2 = 0;
+  display1 = "";
+  value1.textContent = "";
+  value2.textContent = "0";
+  historyCalcu.textContent = "";
+  displayAnzeigen();
+} */
 
 function plusDisplay() {
   if (display1 === 0) {
@@ -90,6 +100,12 @@ function divideDisplay() {
 }
 
 function equalDisplay() {
+  let total = display1 + display2;
+  let result = Function("return " + total)();
+  const addCalcu = document.createElement("li");
+  addCalcu.textContent = `${total} = ${result}`;
+  historyCalcu.appendChild(addCalcu);
+  /* display2 = 0; */
   display2 = Function("return " + display1 + display2)();
   display1 = "";
   displayAnzeigen();
